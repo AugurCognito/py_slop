@@ -5,7 +5,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from py_slop.checks.narrator_comment import check_narrator_comments
+from py_slop.checks import ALL_CHECKS
 
 
 def main() -> None:
@@ -26,11 +26,12 @@ def main() -> None:
             sys.exit(2)
 
         source = path.read_text(encoding="utf-8")
-        violations = check_narrator_comments(source, filename=filepath)
-        for v in violations:
-            print(f"{filepath}:{v.line}:{v.col}: [{v.check}] {v.comment}")
-            found += 1
+        for check_fn in ALL_CHECKS:
+            violations = check_fn(source, filename=filepath)
+            for v in violations:
+                print(f"{filepath}:{v.line}:{v.col}: [{v.check}] {v.comment}")
+                found += 1
 
     if found:
-        print(f"\n{found} narrator-comment violation(s) found.", file=sys.stderr)
+        print(f"\n{found} violation(s) found.", file=sys.stderr)
         sys.exit(1)
