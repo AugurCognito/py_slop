@@ -1,0 +1,45 @@
+[project]
+name = "py-slop"
+version = "0.0.1"
+description = "Linter that catches AI-generated code slop in Python — the ex_slop of the Python ecosystem."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Aniket Singh" }]
+keywords = ["linter", "slop", "ai", "code-quality", "libcst"]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = ["libcst>=1.4"]
+
+[project.scripts]
+py-slop = "py_slop.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/augurcognito/py_slop"
+Repository = "https://github.com/augurcognito/py_slop"
+Issues = "https://github.com/augurcognito/py_slop/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/py_slop"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+src = ["src", "tests"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
