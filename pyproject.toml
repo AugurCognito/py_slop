@@ -1,6 +1,6 @@
 [project]
 name = "py-slop"
-version = "0.1.0"
+version = "0.1.1"
 description = "Linter that catches AI-generated code slop in Python — the ex_slop of the Python ecosystem."
 readme = "README.md"
 license = "MIT"
