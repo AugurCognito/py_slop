@@ -20,9 +20,9 @@ dependencies = ["libcst>=1.4"]
 py-slop = "py_slop.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/augurcognito/py_slop"
-Repository = "https://github.com/augurcognito/py_slop"
-Issues = "https://github.com/augurcognito/py_slop/issues"
+Homepage = "https://github.com/AugurCognito/py_slop"
+Repository = "https://github.com/AugurCognito/py_slop"
+Issues = "https://github.com/AugurCognito/py_slop/issues"
 
 [build-system]
 requires = ["hatchling"]

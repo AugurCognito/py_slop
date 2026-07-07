@@ -1,0 +1,6 @@
+- id: py-slop
+  name: py-slop
+  description: Catch AI-generated code slop in Python
+  entry: py-slop check
+  language: python
+  types: [python]

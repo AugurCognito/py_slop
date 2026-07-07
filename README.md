@@ -25,6 +25,16 @@ pip install py-slop
 py-slop check path/to/file.py [more files...]
 ```
 
+### pre-commit
+
+```yaml
+repos:
+  - repo: https://github.com/AugurCognito/py_slop
+    rev: v0.1.1
+    hooks:
+      - id: py-slop
+```
+
 ## Checks
 
 ### Comment / docstring content (ruff can't — it never inspects content)
